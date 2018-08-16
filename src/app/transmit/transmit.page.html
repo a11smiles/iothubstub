@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button (click)="menuButtonClick()"></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Transmit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <p *ngIf="config == null">
+    Not found.
+  </p>
+  <p *ngIf="config != null">
+      Found.
+  </p>
+</ion-content>

@@ -1,0 +1,21 @@
+#about {
+    text-align: center;
+    color:#444;
+
+    .main-container {
+        a {
+            text-shadow: none;
+            text-decoration: none;
+        }
+
+        p:first-child {
+            text-align: justify;
+            padding-bottom:100px;
+        }
+        
+        p:not(:first-child) {
+            padding-top:50px;
+            font-size:.8em;
+        }
+    }
+}

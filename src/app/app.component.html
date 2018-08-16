@@ -1,3 +1,33 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane>
+    <ion-menu type="overlay" (click)="clickedOff()">
+      <ion-content scroll-y="false" force-overscroll="false" style="height:100%;">
+        <ion-grid style="padding:0px;height:100%;">
+          <ion-row style="height:100%;">
+            <ion-col size="3" style="background-color:#eaeaea;height:100%;padding-top:50px;">
+              <div style="background-color:#488aff;border:2px solid white;border-radius:30px;margin:0px auto;padding:5px;height:60px;width:60px;overflow: hidden;text-align: center;">
+                  <img src="../assets/images/iot-hub.png" style="width:60%;margin-top:8px;" />
+              </div>
+            </ion-col>
+            <ion-col style="padding:40px 0px 0px 0px;">
+                    <ion-label style="padding-left: 20px;">
+                      <span style="font-weight:500;">IoT Hub Stub</span><br />
+                      <span style="color:#999;font-size:.65em;">ver. 1.0.0 beta</span>
+                    </ion-label>
+              <hr style="border-top:1px solid #eaeaea;" />
+              <ion-list lines="none">
+                    <ion-menu-toggle *ngFor="let page of appPages">
+                      <ion-item detail="false" [routerLink]="page.url" [routerDirection]="'root'">
+                        <ion-icon slot="start" [name]="page.icon" color="primary"></ion-icon>
+                        <ion-label style="color:#666;font-size:.9em;" >{{page.title}}</ion-label>
+                      </ion-item>
+                    </ion-menu-toggle>
+                  </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet menuClose main></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
